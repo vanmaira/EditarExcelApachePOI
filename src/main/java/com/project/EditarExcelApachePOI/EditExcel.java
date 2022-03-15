@@ -21,24 +21,18 @@ public class EditExcel {
                 HSSFSheet dados1 = workbook.getSheetAt(0);
                 HSSFSheet dados2 = workbook.getSheetAt(1);
 
-                FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
-                HSSFSheet sheet = workbook.getSheetAt(0);
-                int lastRowNo = sheet.getLastRowNum();
+                Row dados1Row = dados1.getRow(4);
+                dados1Row.getCell((short) 1).setCellValue(123);
 
-                for (int rownum = 2; rownum <= lastRowNo; rownum++) {
-                }
+                Row dados1Row2 = dados1.getRow(5);
+                dados1Row2.getCell((short) 1).setCellValue(456);
 
-                Row dados1Row = dados1.getRow(3);
-                dados1Row.getCell((short) 1).setCellValue("VANESSA");
+              /*  Row dados2Row1 = dados2.getRow(3);
+                dados2Row1.getCell((short) 1).setCellValue(789);
 
-                Row dados1Row2 = dados1.getRow(4);
-                dados1Row2.getCell((short) 1).setCellValue("VANESSA");
+                Row dados2Row2 = dados2.getRow(4);
+                dados2Row2.getCell((short) 1).setCellValue(1022);*/
 
-                Row dados2Row = dados1.getRow(6);
-                dados2Row.getCell((short) 1).setCellValue("NILSINHO");
-
-                Row dados2Row4 = dados1.getRow(7);
-                dados2Row4.getCell((short) 1).setCellValue("FELIPE");
                 file.close();
 
                 FileOutputStream outFile = new FileOutputStream(new File(fileName));
